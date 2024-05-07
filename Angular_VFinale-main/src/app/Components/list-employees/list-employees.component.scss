@@ -1,0 +1,197 @@
+/* Ajouter de l'espace à gauche du contenu */
+.container {
+  margin-left: 100px; /* Changer la valeur selon vos besoins */
+}
+h2 {
+  font-size: 24px; /* Taille de la police */
+  font-weight: bold; /* Gras */
+  color: #927878; /* Couleur du texte */
+  text-align: center; /* Centré horizontalement */
+  text-transform: uppercase; /* Convertit le texte en majuscules */
+  margin-bottom: 20px; /* Espacement en bas */
+  background-color: #f8f4f4; /* Couleur de fond */
+  padding: 10px; /* Espacement intérieur */
+  border-radius: 5px; /* Bordure arrondie */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Ombre douce */
+}
+
+.form-group {
+  margin-left: 250px;
+  display: inline-block;
+  margin-right: 10px; /* Ajoute un espace entre les éléments */
+  margin-bottom: 20px;
+}
+
+
+/* Style des boutons */
+.btn {
+  font-weight: 400;
+  color: #212529;
+  text-align: center;
+  vertical-align: baseline;
+  user-select: none;
+  background-color: transparent;
+  border: 1px solid transparent;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: 0.25rem;
+  text-decoration: none;
+}
+
+.table {
+  margin-bottom: 100px;
+  background-color: #f9f9f9; /* Couleur de fond */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ajoute une ombre */
+  margin-left: 50px; /* Marge à gauche */
+  width: calc(100% - 200px); /* Largeur du tableau */
+  height: 500px; /* Hauteur du tableau */
+  margin-bottom: 20px; /* Ajoute un espace en dessous de la table */
+}
+
+
+
+
+/* Style de la bordure du tableau */
+.table th,
+.table td {
+  border: 1px solid #dee2e6; /* Couleur de la bordure */
+}
+
+/* Style de la couleur de fond des en-têtes de colonne */
+.table thead th {
+  background-color: #f8f9fa; /* Couleur de fond */
+}
+
+/* Style du texte centré dans les cellules du tableau */
+.table th,
+.table td {
+  text-align: center; /* Alignement horizontal */
+}
+
+/* Style de la couleur de fond des lignes impaires du tableau */
+.table-striped tbody tr:nth-of-type(odd) {
+  background-color: #f2f2f2; /* Couleur de fond */
+}
+
+/* Style du survol des lignes du tableau */
+.table tbody tr:hover {
+  background-color: #e9ecef; /* Couleur de fond au survol */
+}
+
+fieldset{
+    margin-top: 10px;
+    margin-left: 300px;
+    background-color: #ffffff;
+    border: 2px solid rgb(255, 255, 255); /* Ajoute une bordure solide bleue de 2 pixels */
+}
+
+ /* Style des images utilisées comme boutons */
+ img.button {
+  width: 50px; /* Largeur de l'image */
+  height: 60px; /* Hauteur de l'image */
+  cursor: pointer; /* Curseur pointeur au survol */
+  margin-right: 10px; /* Espacement entre les images */
+}
+
+/* Style au survol des images */
+img.button:hover {
+  opacity: 0.8; /* Opacité réduite au survol */
+}
+
+  .popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-inner {
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+    width: 50%;
+    max-width: 500px;
+}
+
+.popup-inner form {
+    display: flex;
+    flex-direction: column;
+}
+
+.popup-inner form div {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px; /* Espacement entre chaque champ */
+}
+
+.popup-inner form div label {
+    width: 120px; /* Largeur fixe pour les labels */
+    margin-right: 10px; /* Espacement à droite des labels */
+}
+
+.popup-inner form div input {
+    flex: 1; /* Prend autant d'espace que possible */
+    padding: 8px; /* Espacement à l'intérieur des champs */
+    border: 1px solid #ccc; /* Bordure autour des champs */
+    border-radius: 3px; /* Coins arrondis */
+    outline: none; /* Supprime la bordure de focus */
+}
+
+.popup-inner form div input:focus {
+    border-color: #007bff; /* Couleur de la bordure au focus */
+}
+
+.popup-inner form div:last-child {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.popup-inner form div:last-child button {
+    border: 1px solid #ccc; /* Bordure autour des boutons */
+    padding: 8px 16px; /* Espacement à l'intérieur des boutons */
+    margin-left: 10px; /* Espacement entre les boutons */
+    background-color: transparent; /* Fond transparent */
+    cursor: pointer; /* Curseur de souris */
+}
+
+.popup-inner form div:last-child button:hover {
+    background-color: #f0f0f0; /* Couleur de fond au survol */
+}
+
+
+
+
+.input-field {
+  max-width: 300px;
+  width: 100%;
+  background-color: #ffffff;
+  margin: 10px 0;
+  height: 30px;
+  border-radius: 55px;
+  display: grid;
+  grid-template-columns: 15% 85%;
+  padding: 0 0.4rem;
+  position: relative;
+}
+
+.input-field input {
+  background: none;
+  outline: none;
+  border: none;
+  line-height: 1;
+  font-weight: 400;
+  font-size: 1.1rem;
+  color: #070707;
+}
+
+.input-field input::placeholder {
+  color: #b6aeaee9;
+  font-weight: 500;
+}

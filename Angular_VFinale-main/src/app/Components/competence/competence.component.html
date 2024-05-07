@@ -1,0 +1,55 @@
+<div class="equipe">
+<h2>Les Compétences</h2>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Nom de la compétence</th>
+        <th>Description</th>
+        <th>Niveau</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let skill of skills">
+        <td>{{skill['nom_compétence']}}</td>
+        <td>
+            <select [(ngModel)]="skill.domaine">
+              <option *ngFor="let domaine of domaines" [ngValue]="domaine">{{ domaine }}</option>
+            </select>
+          </td>
+          <td>
+            <select [(ngModel)]="skill.niveau">
+              <option *ngFor="let niveau of niveaux" [ngValue]="niveau">{{ niveau}}</option>
+            </select>
+          </td>
+      
+        <td>
+          <img src="../../../assets/image/supprimer.png" alt="Supprimer" class="button" (click)="deleteUserSkill(skill.id)">
+          <img src="../../../assets/image/modifier.png" alt="Modifier" class="button" (click)="updateUserSkill(userId, skill.id, skill)">          
+        </td> 
+      </tr>
+        <!-- Add a new row for adding a new user skill -->
+        <tr>
+          <td>
+            <input type="text" [(ngModel)]="newSkillName" placeholder="Nom de la compétence">
+          </td>
+          <td>
+            <select [(ngModel)]="newSkillDomain">
+              <option *ngFor="let domaine of domaines" [ngValue]="domaine">{{ domaine }}</option>
+            </select>
+          </td>
+          <td>
+            <select [(ngModel)]="newSkillNiveau">
+              <option *ngFor="let niveau of niveaux" [ngValue]="niveau">{{ niveau }}</option>
+            </select>
+          </td>
+          <td>
+            <img src="../../../assets/image/add.jpg" alt="Ajouter" class="button" (click)="addNewSkill()">
+          </td>
+        </tr>
+    </tbody>
+  </table>
+</div>
+
+
+

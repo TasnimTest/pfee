@@ -1,0 +1,111 @@
+
+<div *ngIf="isLoggedIn()" class="navbar">
+
+  <img src="../../../assets/image/logo.jpg" alt="Logo de l'entreprise">
+  
+  <div class="user-details">
+    <div *ngIf="authService.getUserDetails() as userDetail">
+      {{ userDetail.username }}
+    </div>
+    <div *ngIf="authService.getUserDetails() as userDetail">
+      {{ userDetail.role }}
+    </div>
+  </div>
+
+  <img src="../../../assets/image/logout.png" alt="Image de déconnexion" class="logout-image" (click)="logout()">
+
+  <div class="sidebar-container">
+    <div class="sidebar">
+      <ul>
+        <li style="display: flex; align-items: center; margin-bottom: 25px; margin-top: 30px;">
+          <img src="../../../assets/image/home.jpg" alt="home" style="margin-right: 5px; margin-bottom: 10px;height: 30px;">
+          <a href="/home">Home</a>
+        </li>
+        
+          <!-- Rubriques pour l'employé -->
+          <ng-container *ngIf="userRole === 'Employé'">
+            <li style="display: flex; align-items: center;margin-bottom: 25px;">
+              <img src="../../../assets/image/profile.png" alt="profile" style="margin-right: 5px; margin-bottom: 10px;height: 30px;">
+              <a  href="../employee">Profile</a>
+            </li>
+            <li style="display: flex; align-items: center;margin-bottom: 25px;">
+              <img src="../../../assets/image/formation.png" alt="mes formations" style="margin-right: 5px; margin-bottom: 10px;height: 30px;">
+              <a href="../formation">Mes Formations</a>
+            </li>
+            <li style="display: flex; align-items: center;margin-bottom: 25px;">
+              <img src="../../../assets/image/catalogue.png" alt="catalogue" style="margin-right: 5px; margin-bottom: 10px;height: 30px;">
+              <a href="/Catalogueformation">Catalogue des Formations</a>
+            </li> 
+          </ng-container>
+        <!-- Rubriques pour le manager -->
+          <ng-container *ngIf="userRole === 'Manager'">
+            <li style="display: flex; align-items: center;margin-bottom: 25px;">
+              <img src="../../../assets/image/profile.png" alt="profile" style="margin-right: 5px; margin-bottom: 10px;height: 30px;">
+              <a  href="../manager">Profile</a>
+            </li>
+            <li style="display: flex; align-items: center;margin-bottom: 25px;">
+              <img src="../../../assets/image/formation.png" alt="mes formations" style="margin-right: 5px; margin-bottom: 10px;height: 30px;">
+              <a href="../formation">Mes Formations</a>
+            </li>
+            <li style="display: flex; align-items: center;margin-bottom: 25px;">
+              <img src="../../../assets/image/catalogue.png" alt="catalogue" style="margin-right: 5px; margin-bottom: 10px;height: 30px;">
+              <a href="/Catalogueformation">Catalogue des Formations</a>
+            </li> 
+          </ng-container>
+        <!-- Rubriques pour le Admin -->
+          <ng-container *ngIf="userRole === 'Admin'">
+            <li style="display: flex; align-items: center; margin-bottom: 20px;">
+              <img src="../../../assets/image/profile.png" alt="profile" style="margin-right: 5px;  height: 30px;">
+              <a  href="../admin">Profile</a>
+            </li>
+            <li style="display: flex; align-items: center; margin-bottom: 20px;">
+              <img src="../../../assets/image/formation.png" alt="mes formations" style="margin-right: 5px; height: 30px;">
+              <a href="../formation">Mes Formations</a>
+            </li>
+            <li style="display: flex; align-items: center;margin-bottom: 20px;">
+              <img src="../../../assets/image/catalogue.png" alt="catalogue" style="margin-right: 5px; height: 30px;">
+              <a href="/CatalogueAdmin">Catalogue des Formations</a>
+            </li> 
+          </ng-container>
+          <li style="display: flex; align-items: center;margin-bottom: 20px;">
+            <img src="../../../assets/image/competence.png" alt="competence" style="margin-right: 5px; height: 30px;">
+            <a  href="/competence">Mes Compétences</a>
+          </li>
+          <li style="display: flex; align-items: center; margin-bottom: 20px;">
+            <img src="../../../assets/image/dashboard1.png" alt="dashboard" style="margin-right: 5px;height: 30px;">
+            <a href="/dashboard">Dashboard</a>
+          </li>
+        <!-- Rubriques pour le manager -->
+        <ng-container *ngIf="userRole === 'Manager'">
+          <li style="display: flex; align-items: center; margin-bottom: 20px;">
+            <img src="../../../assets/image/membre_equipe.png" alt="Equipes" style="margin-right: 5px;height: 30px;">
+            <a href="/membre_equipe">Membres Equipes</a>
+          </li>
+          <li style="display: flex; align-items: center; margin-bottom: 20px;">
+            <img src="../../../assets/image/dashboard_equipe.png" alt="dashboard equipe" style="margin-right: 5px;height: 30px;">
+            <a href="/DashboardEquipe">Dashboard Equipe</a>
+          </li>
+        </ng-container>
+        <!-- Rubriques pour l'administrateur -->
+        <ng-container *ngIf="userRole === 'Admin'">
+          <li style="display: flex; align-items: center; margin-bottom: 20px;">
+            <img src="../../../assets/image/add-formtion.png" alt="dashboard" style="margin-right: 5px;height: 30px;">
+            <a href="/Ajouterformation">Ajouter une Formation</a>
+          </li>
+         <li style="display: flex; align-items: center; margin-bottom: 20px;">
+          <img src="../../../assets/image/membre_equipe.png" alt="dashboard" style="margin-right: 5px;height: 30px;">
+          <a href="/listeEmployés">liste des employés</a>
+        </li>
+          
+          <li style="display: flex; align-items: center; margin-bottom: 20px;">
+            <img src="../../../assets/image/liste.png" alt="dashboard" style="margin-right: 5px;height: 30px;">
+            <a href="/listeFormations">liste des formations</a>
+          </li>
+        </ng-container>
+      </ul>
+    </div>
+  </div>
+
+
+</div>
+  

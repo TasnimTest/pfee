@@ -1,0 +1,130 @@
+/*
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+import { Component, OnInit } from '@angular/core';
+import { TrainingService } from '../../Service/training.service';
+import { FormBuilder, FormGroup, FormsModule,ReactiveFormsModule, Validators } from '@angular/forms';
+import { Training } from '../../Model/training.model';
+import { CommonModule } from '@angular/common';
+
+
+@Component({
+  selector: 'app-ajouter-formation',
+  standalone: true,
+  imports: [FormsModule,CommonModule,ReactiveFormsModule],
+  templateUrl: './ajouter-formation.component.html',
+  styleUrl: './ajouter-formation.component.scss'
+})
+
+
+export class AjouterFormationComponent implements OnInit {
+  trainings: Training[] = [];
+  addTrainingForm!: FormGroup;
+  isPopupVisible: boolean = false;
+
+  constructor(
+    private formBuilder: FormBuilder,
+    private trainingService: TrainingService
+  ) { }
+
+  ngOnInit(): void {
+    this.addTrainingForm = this.formBuilder.group({
+      nom_formation: ['', Validators.required],
+      date: ['', Validators.required],
+      niveau: ['', Validators.required],
+      avancement: ['', Validators.required],
+      file: [null] 
+    });
+
+    this.loadTrainings();
+  }
+
+  loadTrainings(): void {
+    this.trainingService.getTrainings().subscribe({
+      next: (trainings: Training[]) => {
+        this.trainings = trainings.map(training => {
+          training.imageUrl = `http://localhost:8080${training.imageUrl}`;
+          return training;
+        });
+      },
+      error: (error) => console.error('Error fetching trainings:', error)
+    });
+  }
+
+  onFileChange(event: any) {
+    const file = event.target.files[0];
+    this.addTrainingForm.patchValue({
+      file: file
+    });
+  }
+
+  addTraining() {
+    if (!this.addTrainingForm.valid) {
+      console.error('Form is invalid.');
+      return;
+    }
+
+    const formData = new FormData();
+    const formValues = this.addTrainingForm.value;
+
+    Object.keys(formValues).forEach(key => {
+      formData.append(key, formValues[key]);
+    });
+
+    const file = this.addTrainingForm.get('file');
+    if (file && file.value) {
+      formData.append('file', file.value);
+    } else {
+      console.error('File control is not available or no file selected.');
+      return;
+    }
+
+    this.trainingService.addTraining(formData).subscribe(
+      (response: any) => {
+        console.log('Training added successfully:', response);
+        const newTraining: Training = {
+          id: response.id,
+          nom_formation: formValues.nom_formation,
+          date: formValues.date,
+          niveau: formValues.niveau,
+          avancement: formValues.avancement,
+          imageUrl: response.imageUrl ? `http://localhost:8080${response.imageUrl}` : ''
+        };
+        this.trainings.push(newTraining);
+        this.addTrainingForm.reset();
+        this.togglePopup();
+      },
+      (error) => {
+        console.error('Error adding training:', error);
+      }
+    );
+  }
+
+  togglePopup() {
+    this.isPopupVisible = !this.isPopupVisible;
+  }
+}
+*/

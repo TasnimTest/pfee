@@ -1,0 +1,110 @@
+<fieldset>
+  <div class="container">
+    <h2>Employee List</h2>
+     
+      <div class="form-group">
+        <input type="text" [(ngModel)]="searchTextName" (ngModelChange)="filterEmployees()" placeholder="Filter Par Employé" class="input-field">
+      </div>
+      <div class="form-group">
+        <input type="text" [(ngModel)]="searchTextDepartment" (ngModelChange)="filterEmployees()" placeholder="Filter par Département" class="input-field">
+      </div>
+    
+      <table class="table table-striped mt-3">
+        <thead>
+          <tr>
+           <th>FirstName</th>
+            <th>Name</th>
+            <th>Username</th>
+            <th>Email</th>
+            <th>Department</th>
+            <th>Team</th>
+            <th>Role</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let employee of filteredEmployees">
+            <td>{{ employee['prénom'] }}</td>
+            <td>{{ employee['nom'] }}</td>
+            <td>{{ employee['username'] }}</td>
+            <td>{{ employee['email'] }}</td>
+            <td>{{ employee['département'] }}</td>
+            <td>{{ employee['nom_equipe'] }}</td>
+            <td>{{ employee['role'] }}</td>
+           
+          </tr>
+        </tbody>
+      </table>
+  
+  
+      
+    
+      <!-- Registration Popup -->
+      <div *ngIf="showRegistrationPopup" class="popup">
+        <div class="popup-inner">
+          <h2>Register New Employee</h2>
+          <form (ngSubmit)="register()">
+              <div>
+                  <label>FirstName:</label>
+                  <input type="text" [(ngModel)]="newEmployee['prénom']" name="prénom" required>
+                </div>
+            <div>
+              <label>Name:</label>
+              <input type="text" [(ngModel)]="newEmployee.nom" name="nom" required>
+            </div>
+            <div>
+              <label>Username:</label>
+              <input type="text" [(ngModel)]="newEmployee.username" name="username" required>
+            </div>
+            <div>
+              <label>Email:</label>
+              <input type="email" [(ngModel)]="newEmployee.email" name="email" required>
+            </div>
+            <div>
+              <label>Password:</label>
+              <input type="password" [(ngModel)]="newEmployee.password" name="password" required>
+            </div>
+            <div>
+              <label>Role:</label>
+              <input type="text" [(ngModel)]="newEmployee.role" name="role" required>
+            </div>
+            <div>
+              <label>Département:</label>
+              <input type="text" [(ngModel)]="newEmployee['département']" name="département" required>
+            </div>
+            <div>
+              <label>Equipe:</label>
+              <input type="text" [(ngModel)]="newEmployee.nom_equipe" name="nom_equipe" required>
+            </div>
+            <div>
+              <label>Poste:</label>
+              <input type="text" [(ngModel)]="newEmployee.poste" name="poste" required>
+            </div>
+            <div>
+              <label>Grade:</label>
+              <input type="text" [(ngModel)]="newEmployee.grade" name="grade" required>
+            </div>
+            <div>
+              <label>Note:</label>
+              <input type="text" [(ngModel)]="newEmployee.note" name="note" required>
+            </div>
+            <div>
+              <label>Lieu de Travail:</label>
+              <input type="text" [(ngModel)]="newEmployee.lieu_de_travail" name="lieu_de_travail" required>
+            </div>
+            <div>
+              <button type="submit" class="btn btn-success">Register</button>
+              <button type="button" class="btn btn-secondary" (click)="togglePopup()">Cancel</button>
+          </div>
+          </form>
+        </div>
+      </div>
+
+      <img src="../../../assets/image/add_employe.png" alt="Add Employee" class="button" (click)="togglePopup()">
+      <a href="/DashboardAdmin" >
+        <img src="../../../assets/image/dashboard.png" alt="Dashboard" class="button" >
+      </a>
+      
+  
+  </div>
+      
+</fieldset>

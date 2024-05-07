@@ -1,0 +1,212 @@
+h2 {
+  margin-top: 5px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #927878;
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  background-color: #f8f4f4;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.btn-secondary {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+
+
+.btn-secondary {
+  background-color: #6c757d;
+  border-color: #6c757d;
+  color: #fff;
+  border: none;
+}
+
+
+
+.btn-secondary:hover {
+  background-color: #5a6268;
+  border-color: #545b62;
+}
+
+
+
+fieldset {
+  margin-top: 10px;
+  margin-left: 400px;
+  margin-right: 60px;
+  background-color: #ffffff;
+  border: 2px solid rgb(255, 255, 255);
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.input-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.input-field {
+  flex: 1;
+  margin-right: 10px;
+}
+
+.input-field label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.input-field input,
+.input-field textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.input-field textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+button[type="submit"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  background-color: #886c72;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background-color: #886c70;
+}
+
+
+.input-field button {
+  padding: 8px 12px; /* Espacement intérieur du bouton */
+  background-color: #bfb3b6; /* Couleur de fond du bouton */
+  color: #fff; /* Couleur du texte du bouton */
+  border: none; /* Pas de bordure */
+  border-radius: 4px; /* Bordure arrondie */
+  cursor: pointer; /* Curseur pointeur au survol */
+}
+
+.input-field button:hover {
+  background-color: #cfa7a7; /* Couleur de fond du bouton au survol */
+}
+
+
+/* Styles pour la popup */
+.popup {
+  position: fixed;
+  border: #ededed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; /* Modifier la hauteur de la popup */
+  background-color: rgba(0, 0, 0, 0.5); /* Fond semi-transparent */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.popup-container {
+  background-color: #ffffff; /* Couleur de fond du conteneur */
+  padding: 20px; /* Ajouter de l'espace intérieur */
+  border-radius: 10px; /* Bordure arrondie */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Ombre légère */
+}
+
+.popup-inner {
+  background-color: #fff; /* Couleur de fond du contenu */
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.form-group {
+  margin-bottom: 20px; /* Ajoute un espace en dessous de chaque groupe de formulaire */
+}
+
+
+/* Styles pour le formulaire de la popup */
+.popup-inner form {
+  display: flex;
+  flex-direction: column;
+}
+
+.popup-inner h2 {
+  font-size: 25px;
+  margin: auto; /* Centrer horizontalement */
+  margin-top: 25px; /* Ajouter un espace en haut */
+  margin-bottom: 10px; /* Ajouter un espace en bas */
+  text-align: center; /* Centrer le texte horizontalement */
+}
+
+
+
+
+.popup-inner p {
+  margin-top: 5px;
+}
+
+.popup-inner input,
+.popup-inner label {
+  margin-bottom: 10px; /* Ajoute un espace en dessous de chaque champ */
+}
+
+
+.popup-inner label {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.popup-inner input {
+  background: none;
+  outline: none;
+  border: none;
+  line-height: 1;
+  font-weight: 400;
+  font-size: 1.1rem;
+  color: #a6a5a5;
+  width: 100%;
+  height: 100%;
+}
+
+.popup-inner input::placeholder {
+  color: #b6aeaee9;
+  font-weight: 500;
+}
+
+
+.popup-inner button {
+  padding: 10px 20px;
+  margin: 10px auto; /* Centrer horizontalement avec une marge automatique */
+  border: none;
+  border-radius: 3px;
+  background-color: #aaa6a6;
+  color: #fff;
+  cursor: pointer;
+  width: 50%;
+}
+
+/*
+.popup-inner button[type="submit"]:disabled {
+  background-color: #b93f3f;
+  cursor: not-allowed;
+}
+*/

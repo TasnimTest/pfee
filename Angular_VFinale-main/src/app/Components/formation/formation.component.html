@@ -1,0 +1,45 @@
+<div class="equipe">
+  <h2>Les Formations</h2>
+  <div *ngIf="trainings.length > 0">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Nom de la formation</th>
+          <th>Date</th>
+          <th>Avancement</th>
+          <th>Niveau</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let training of trainings">
+          <td >{{ training['nom_formation'] }}</td>
+          <td class="date-cell">
+            <div class="date-picker-container">
+              <input type="text" [(ngModel)]="training.date" [matDatepicker]="picker" class="date-input">
+              <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+              <mat-datepicker #picker></mat-datepicker>
+            </div>
+          </td>
+          <td >
+            <select [(ngModel)]="training.avancement" >
+              <option *ngFor="let avancement of avancements" [ngValue]="avancement">{{ avancement }}</option>
+            </select>
+          </td>
+          <td>
+            <select [(ngModel)]="training.niveau" >
+              <option *ngFor="let niveau of niveaux" [ngValue]="niveau">{{ niveau }}</option>
+            </select>
+          </td>
+          <td >
+            <img src="../../../assets/image/supprimer.png" alt="Supprimer" class="button" (click)="deleteUserTraining(training.id)">
+            <img src="../../../assets/image/modifier.png" alt="Modifier" class="button" (click)="updateUserTraining(userId,training.id,training)">          
+          </td> 
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div *ngIf="trainings.length === 0">
+    <p>Aucune formation trouvée pour cet employé.</p>
+  </div>
+</div>

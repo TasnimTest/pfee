@@ -1,0 +1,112 @@
+/*
+export class AjouterFormationComponent implements OnInit {
+    trainings: EmployeeTraining[] = [];
+    addTrainingForm!: FormGroup;
+    isPopupVisible: boolean = false;
+    userId!: number;
+  
+    constructor(
+      private formBuilder: FormBuilder,
+      private employeeTrainingService: EmployeeTrainingService,
+      private authService: AuthService,
+      private userService: UserService
+    ) { }
+  
+    ngOnInit(): void {
+      this.addTrainingForm = this.formBuilder.group({
+        nom_formation: ['', Validators.required],
+        date: ['', Validators.required],
+        niveau: ['', Validators.required],
+        avancement: ['', Validators.required],
+        file: [null, Validators.required]
+      });
+  
+      // Fetch user ID dynamically
+      const userDetails = this.authService.getUserDetails();
+      if (userDetails && userDetails.username) {
+        this.userService.getUserByUsername(userDetails.username).subscribe(
+          (user: any) => {
+            this.userId = user.matricule;
+            this.loadUserTrainings();
+          },
+          (error) => {
+            console.error('Error fetching user details:', error);
+          }
+        );
+      } else {
+        console.error('User details not found.');
+      }
+    }
+    loadUserTrainings(): void {
+      if (!this.userId || isNaN(this.userId)) {
+        console.error('User ID not found or invalid.');
+        return;
+      }
+    
+      console.log('Fetching user trainings for user ID:', this.userId);
+    
+      this.employeeTrainingService.getAllUserTrainings(this.userId).subscribe({
+        next: (userTrainings: EmployeeTraining[]) => {
+          console.log('User trainings fetched successfully:', userTrainings);
+          this.trainings = userTrainings.map(training => {
+            // Use the correct imageUrl from the training object
+            training.imageUrl = `http://localhost:8080${training['training'].imageUrl}`;
+            return training;
+          });
+        },
+        error: (error) => {
+          console.error('Error fetching user trainings:', error);
+        }
+      });
+    }
+  
+    onFileChange(event: any) {
+      const file = event.target.files[0];
+      this.addTrainingForm.patchValue({
+        file: file
+      });
+    }
+  
+  
+    addTraining() {
+        if (!this.addTrainingForm.valid) {
+          console.error('Form is invalid.');
+          return;
+        }
+      
+        const formData = new FormData();
+        const formValues = this.addTrainingForm.value;
+      
+        Object.keys(formValues).forEach(key => {
+          formData.append(key, formValues[key]);
+        });
+      
+        const file = this.addTrainingForm.get('file');
+        if (file && file.value) {
+          formData.append('file', file.value);
+        } else {
+          console.error('File control is not available or no file selected.');
+          return;
+        }
+      
+        this.employeeTrainingService.addNewTraining(this.userId, formData).subscribe(
+          (response: EmployeeTraining) => {
+            console.log('Training added successfully:', response);
+            this.trainings.push(response);
+            this.addTrainingForm.reset();
+            this.togglePopup();
+            // Reload user trainings to fetch the updated list with the new training
+            this.loadUserTrainings();
+          },
+          (error) => {
+            console.error('Error adding training:', error);
+          }
+        );
+      }
+  
+    togglePopup() {
+      this.isPopupVisible = !this.isPopupVisible;
+    }
+  }
+*/
+

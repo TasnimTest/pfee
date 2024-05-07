@@ -1,0 +1,101 @@
+.navbar {
+    background-color: #ffffff; /* Couleur de fond de la barre de navigation */
+    color: #000000; /* Couleur du texte */
+    padding: 0px; /* Espacement interne */
+    display: flex; /* Utiliser flexbox pour aligner les éléments */
+    align-items: center; /* Centrer verticalement les éléments */
+  }
+  .navbar img {
+    height: 45px; /* Hauteur du logo */
+    margin-right: 1250px; /* Espacement entre le logo et les détails de l'utilisateur */
+  }
+
+  .logout-image {
+    width: 90px; /* Définir la largeur souhaitée */
+    height: auto; /* Permet de conserver le ratio hauteur/largeur d'origine */
+  }
+  
+  
+  .user-details {
+    margin-right: auto; /* Aligner les détails de l'utilisateur à gauche */
+  }
+  
+  .user-details > div {
+    margin-bottom: 5px; /* Espacement entre le nom et le rôle de l'utilisateur */
+  }
+  
+  
+
+
+  .sidebar {
+    width: 250px; /* Largeur du sidebar */
+    position: fixed;
+    padding-left: 40px;
+    right: 0;
+    left: 0;
+    margin-top: 56px;
+    top: 0;
+    border-radius: 8px; /* Bordure arrondie */
+    bottom: 0; /* Pour couvrir toute la hauteur de la page */
+    background-color: #efecec; /* Couleur de fond du sidebar */
+    padding-top: 20px; /* Réduire l'espace en haut du sidebar */
+  }
+  
+  .wrapper {
+    display: flex; /* Utiliser Flexbox pour la mise en page */
+  }
+  
+  
+  .sidebar ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .sidebar li {
+    position: relative;
+    font-size: 18px;
+  }
+  
+  .sidebar a {
+    text-decoration: none;
+    color: #4a4444; /* Couleur des liens */
+    display: block;
+    padding: 10px; /* Espacement des liens */
+  }
+  
+  .sidebar a:hover {
+    background-color: #d4cdcd; /* Couleur de fond au survol des liens */
+  }
+  
+  .sidebar ul ul {
+    display: none;  /* Masque les sous-rubriques par défaut */
+    position: absolute;
+    margin-left: 150px; /* Décalage vers la droite pour les sous-rubriques */
+    left: 100%; /* Positionne les sous-rubriques à droite de la rubrique parente */
+    top: 0;
+    margin-left: 50px; /* Ajoute un décalage à gauche pour les sous-rubriques */
+    padding-left: 20px; /* Décalage supplémentaire vers la droite pour les sous-rubriques */
+  }
+
+  
+  .sidebar ul li:hover > ul {
+    display: contents; /*Affiche les sous-rubriques au survol */
+  }
+
+  .sidebar-container {
+    display: flex;
+    align-items: center; /* Centrer verticalement les éléments */
+  }
+
+  .sidebar-container {
+    display: flex; /* Utilise un conteneur flexible pour aligner l'image et la barre latérale */
+  }
+  
+  .hidden {
+    display: none; /* Masque le sidebar en modifiant son affichage */
+  }
+  .sub-menu{
+    position: absolute; 
+    top: 100%; 
+    left: 0;
+  }

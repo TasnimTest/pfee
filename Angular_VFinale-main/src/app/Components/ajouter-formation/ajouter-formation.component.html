@@ -1,0 +1,50 @@
+<button class="add-training-button" (click)="togglePopup()">Add Training</button>
+
+<div class="popup-background" *ngIf="isPopupVisible">
+  <div class="popup-overlay" (click)="togglePopup()"></div>
+  <div class="popup-container">
+    <form [formGroup]="addTrainingForm" (ngSubmit)="addTraining()">
+      <label for="nom_formation">Nom Formation:</label>
+      <input type="text" id="nom_formation" formControlName="nom_formation" required><br><br>
+    
+      <label for="date">Date:</label>
+      <input type="date" id="date" formControlName="date" required><br><br>
+    
+      <label for="niveau">Niveau:</label>
+      <select name="niveau"  formControlName="niveau" id="niveau" required>
+        <option value="Débutant">Débutant</option>
+        <option value="Intermédiaire">Intermédiaire</option>
+        <option value="Avancé">Avancé</option>
+      </select><br><br>
+    
+      <label for="avancement">Avancement:</label>
+      <select name="avancement"  id="avancement" formControlName="avancement" required>
+        <option value="Planifié">Planifié</option>
+        <option value="En_Cours">En Cours</option>
+        <option value="Terminé">Terminé</option>
+      </select><br><br>
+    
+      <label for="file">Choose Image:</label>
+      <input type="file" #fileInput id="file" formControlName="file" (change)="onFileChange($event)" accept="image/*" required><br><br>
+    
+      <label for="is_public">Is Public:</label>
+      <input type="checkbox" id="is_public" formControlName="is_public"><br><br>
+    
+      <button type="submit">Add Training</button>
+    </form>    
+    <button class="close-button" (click)="togglePopup()">X</button> 
+  </div>
+</div>
+
+<div class="catalog-layout">
+  <div *ngFor="let training of trainings" class="training-card">
+    <div>
+      <img [src]="training.imageUrl" alt="Training Image">
+    </div>
+    <h3>{{ training['training'].nom_formation }}</h3>
+    <p>   {{ training['training'].avancement }} le : {{ training['training'].date | date:'dd/MM/yyyy' }}</p>
+    <p>Niveau: {{ training['training'].niveau }}</p>
+
+    <button class="delete-button" (click)="deleteUserTraining(userId, training['training'].id)">Delete</button>
+  </div>
+</div>

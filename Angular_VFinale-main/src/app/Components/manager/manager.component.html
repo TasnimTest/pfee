@@ -1,0 +1,104 @@
+<fieldset>
+  <div class="equipe">
+    <h2>Mon Profile </h2>
+    <div class="form-container">
+      <div *ngIf="user">
+        <form (ngSubmit)="updateUserByUsername()">
+          <div class="input-row">
+            <div class="input-field">
+              <label for="nom">Nom:</label>
+              <input type="text" [(ngModel)]="user.nom" id="nom" name="nom" required>
+            </div>
+            <div class="input-field">
+              <label for="prenom">Prénom:</label>
+              <input type="text" [(ngModel)]="user['prénom']" id="prenom" name="prénom" required>
+            </div>
+          </div>
+
+          <div class="input-row">
+            <div class="input-field">
+              <label for="username">Username:</label>
+              <input type="text" [(ngModel)]="user.username" name="username" required class="input-field">
+            </div>
+
+            <div class="input-field">
+              <label for="email">Email:</label>
+              <input type="email" [(ngModel)]="user.email" name="email" required class="input-field">
+            </div>
+          </div>
+
+          <div class="input-row">
+            <div class="input-field">
+              <label for="poste">Poste:</label>
+              <input type="text" [(ngModel)]="user.poste" name="poste" required class="input-field">
+            </div>
+
+            <div class="input-field">
+              <label for="département">Département:</label>
+              <input type="text" [(ngModel)]="user['département']" name="département" required class="input-field">
+            </div>
+          </div>
+
+          <div class="input-row">
+            <div class="input-field">
+              <label for="lieu_de_travail">Lieu de Travail:</label>
+              <input type="text" [(ngModel)]="user.lieu_de_travail" name="lieu_de_travail" required class="input-field">
+            </div>
+
+            <div class="input-field">
+              <label for="role">Role :</label>
+              <input type="text" [(ngModel)]="user.role" name="role" required class="input-field">
+            </div>
+          </div>
+
+          <div class="input-row">
+            <div class="input-field">
+              <label for="grade">Grade:</label> 
+              <input type="number" [(ngModel)]="user.grade" name="grade" required class="input-field">
+            </div>
+
+            <div class="input-field">
+              <label for="note">Note:</label>
+              <textarea [(ngModel)]="user.note" name="note" required class="input-field"></textarea>
+            </div>
+          </div>
+
+          <div class="input-row">
+            <div class="input-field">
+              <button type="button" (click)="openPopup()">Modifier le mot de passe</button>
+            </div>
+          </div>
+          <button type="submit">Modifier</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</fieldset>
+
+
+<div class="popup" *ngIf="isPopupVisible">
+  <div class="popup-overlay" (click)="closePopup()"></div>
+  <div class="popup-container">
+    <h2>Modification de mot de passe</h2>
+    <div *ngIf="updateForm" class="update">
+      <form [formGroup]="updateForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <label for="oldPassword">Ancien mot de passe : </label>
+          <input type="password" formControlName="oldPassword" class="form-control" id="oldPassword">
+        </div>
+        <div class="form-group">
+          <label for="newPassword">Nouveau mot de passe : </label>
+          <input type="password" formControlName="newPassword" class="form-control" id="newPassword">
+        </div>
+        <div class="form-group">
+          <label for="confirmPassword">Confirmer le nouveau mot de passe : </label>
+          <input type="password" formControlName="confirmPassword" class="form-control" id="confirmPassword">
+        </div>
+        <button type="submit" class="btn-primary">Mettre à jour le mot de passe</button>
+        <button type="button" class="btn-secondary" (click)="closePopup()">Cancel</button>
+
+      </form>
+    </div>
+  </div>
+</div>
+

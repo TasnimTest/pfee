@@ -1,0 +1,93 @@
+.popup {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 2;
+    cursor: pointer;
+  }
+  
+  button img {
+    width: 20px; /* Définissez la largeur souhaitée */
+    height: 20px; /* Définissez la hauteur souhaitée */
+}
+
+  .popup-content {
+    margin: 15% auto;
+    padding: 20px;
+    width: 70%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    background-color: white;
+    cursor: default;
+  }
+  
+  .close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  fieldset{
+    margin-top: 50px;
+    margin-left: 300px;
+    background-color: #ffffff;
+    border: 2px solid rgb(240, 240, 240); /* Ajoute une bordure solide bleue de 2 pixels */
+  }
+
+  h3 {
+    font-size: 24px; /* Taille de la police */
+    color: #333; /* Couleur du texte */
+    margin-bottom: 20px; /* Espace en bas */
+  }
+  
+
+  h2 {
+    margin-top: 5px;
+    font-size: 24px; /* Taille de la police */
+    font-weight: bold; /* Gras */
+    color: #927878; /* Couleur du texte */
+    text-align: center; /* Centré horizontalement */
+    text-transform: uppercase; /* Convertit le texte en majuscules */
+    margin-bottom: 20px; /* Espacement en bas */
+    background-color: #f8f4f4; /* Couleur de fond */
+    padding: 10px; /* Espacement intérieur */
+    border-radius: 5px; /* Bordure arrondie */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Ombre douce */
+  }
+  button {
+    padding: 10px 20px; /* Ajoutez un remplissage pour le bouton */
+    font-size: 16px; /* Taille de la police */
+    background-color: #ced0d1; /* Couleur de fond */
+    color: white; /* Couleur du texte */
+    border: none; /* Supprimez la bordure */
+    border-radius: 5px; /* Ajoutez un rayon de bordure */
+    cursor: pointer; /* Changez le curseur en pointeur au survol */
+  }
+  
+  button:hover {
+    background-color: #bfc7d0; /* Couleur de fond au survol */
+  }
+  
+  img.button {
+    width: 30px; /* Largeur de l'image */
+    height: 20px; /* Hauteur de l'image */
+    cursor: pointer; /* Curseur pointeur au survol */
+    margin-right: 10px; /* Espacement entre les images */
+  }
+  
+  /* Style au survol des images */
+  img.button:hover {
+    opacity: 0.8; /* Opacité réduite au survol */
+  }

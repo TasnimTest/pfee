@@ -1,0 +1,90 @@
+.equipe {
+  display: flex; /* Utilise flexbox pour aligner les éléments */
+  justify-content: center; /* Centre horizontalement */
+  margin-top: 40px; /* Marge en haut pour espacement */
+  margin-bottom: 40px; /* Marge en bas pour espacement */
+}
+
+.equipe input[type="text"] {
+  /* Styles pour rendre l'input ressemblant à un bouton */
+  appearance: button;
+  font-weight: bold; /* Met le texte en gras */
+  padding: 8px 16px; /* Espacement intérieur du bouton */
+  background-color: #f8f4f4; /* Couleur de fond du bouton */
+  color: #927878; /* Couleur du texte du bouton */
+  border: none; /* Pas de bordure */
+  border-radius: 4px; /* Bordure arrondie */
+  cursor: pointer; /* Curseur pointeur au survol */
+}
+
+
+
+
+/* Centrer le contenu du tableau */
+.table {
+  margin: auto; /* Centre le tableau horizontalement */
+}
+
+/* Style de la bordure du tableau */
+.table th,
+.table td {
+  border: 1px solid #dee2e6; /* Couleur de la bordure */
+}
+
+/* Style de la couleur de fond des en-têtes de colonne */
+.table thead th {
+  background-color: #f8f9fa; /* Couleur de fond */
+}
+
+/* Style du texte centré dans les cellules du tableau */
+.table th,
+.table td {
+  text-align: center; /* Alignement horizontal */
+}
+
+/* Style de la couleur de fond des lignes impaires du tableau */
+.table-striped tbody tr:nth-of-type(odd) {
+  background-color: #f2f2f2; /* Couleur de fond */
+}
+
+/* Style du survol des lignes du tableau */
+.table tbody tr:hover {
+  background-color: #e9ecef; /* Couleur de fond au survol */
+}
+
+/* Style des images utilisées comme boutons */
+img.button {
+  width: 30px; /* Largeur de l'image */
+  height: 30px; /* Hauteur de l'image */
+  cursor: pointer; /* Curseur pointeur au survol */
+  margin-right: 10px; /* Espacement entre les images */
+}
+
+/* Style au survol des images */
+img.button:hover {
+  opacity: 0.8; /* Opacité réduite au survol */
+}
+
+
+
+
+fieldset{
+  margin-top: 50px;
+  margin-left: 300px;
+  background-color: #ffffff;
+  border: 2px solid rgb(240, 240, 240); /* Ajoute une bordure solide bleue de 2 pixels */
+  }
+
+h2 {
+  margin-top: 5px;
+  font-size: 24px; /* Taille de la police */
+  font-weight: bold; /* Gras */
+  color: #927878; /* Couleur du texte */
+  text-align: center; /* Centré horizontalement */
+  text-transform: uppercase; /* Convertit le texte en majuscules */
+  margin-bottom: 20px; /* Espacement en bas */
+  background-color: #f8f4f4; /* Couleur de fond */
+  padding: 10px; /* Espacement intérieur */
+  border-radius: 5px; /* Bordure arrondie */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Ombre douce */
+}

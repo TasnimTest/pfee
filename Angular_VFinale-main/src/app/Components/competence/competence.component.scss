@@ -1,0 +1,114 @@
+.equipe {
+  display: flex;
+  flex-direction: column; /* Aligne les éléments verticalement */
+  align-items: center; /* Centre les éléments horizontalement */
+  margin-top: 80px;
+  margin-bottom: 40px;
+  margin-left:300px ;
+}
+
+h2 {
+  font-size: 24px; /* Taille de la police */
+  font-weight: bold; /* Gras */
+  color: #927878; /* Couleur du texte */
+  text-align: center; /* Centré horizontalement */
+  text-transform: uppercase; /* Convertit le texte en majuscules */
+  margin-bottom: 20px; /* Espacement en bas */
+  background-color: #f8f4f4; /* Couleur de fond */
+  padding: 10px; /* Espacement intérieur */
+  border-radius: 5px; /* Bordure arrondie */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Ombre douce */
+}
+  
+  .equipe input[type="text"] {
+    /* Styles pour rendre l'input ressemblant à un bouton */
+    appearance: button;
+    padding: 8px 16px; /* Espacement intérieur du bouton */
+    background-color: #fafafa; /* Couleur de fond du bouton */
+    color: #5d5959; /* Couleur du texte du bouton */
+    border: none; /* Pas de bordure */
+    border-radius: 4px; /* Bordure arrondie */
+    cursor: pointer; /* Curseur pointeur au survol */
+  }
+  
+  
+  
+  
+/* Centrer le contenu du tableau */
+.table {
+    background-color: #f9f9f9; /* Couleur de fond */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ajoute une ombre */
+    margin-left: 100px; /* Marge à gauche */
+    width: calc(100% - 200px); /* Largeur du tableau */
+  }
+  
+  /* Style de la bordure du tableau */
+  .table th,
+  .table td {
+    border: 1px solid #dee2e6; /* Couleur de la bordure */
+  }
+  
+  /* Style de la couleur de fond des en-têtes de colonne */
+  .table thead th {
+    background-color: #f8f9fa; /* Couleur de fond */
+  }
+  
+  /* Style du texte centré dans les cellules du tableau */
+  .table th,
+  .table td {
+    text-align: center; /* Alignement horizontal */
+  }
+  
+  /* Style de la couleur de fond des lignes impaires du tableau */
+  .table-striped tbody tr:nth-of-type(odd) {
+    background-color: #f2f2f2; /* Couleur de fond */
+  }
+  
+  /* Style du survol des lignes du tableau */
+  .table tbody tr:hover {
+    background-color: #e9ecef; /* Couleur de fond au survol */
+  }
+  
+  /* Style des images utilisées comme boutons */
+  img.button {
+    width: 15px; /* Largeur de l'image */
+    height: 20px; /* Hauteur de l'image */
+    cursor: pointer; /* Curseur pointeur au survol */
+    margin-right: 10px; /* Espacement entre les images */
+  }
+  
+  /* Style au survol des images */
+  img.button:hover {
+    opacity: 0.8; /* Opacité réduite au survol */
+  }
+  
+  /* Style de la couleur du texte dans les cellules d'en-tête */
+.table th {
+    color: #3b0d5d; /* Couleur du texte */
+  }
+  
+
+/* Style pour les éléments <select> dans les cellules de tableau */
+td select {
+    width: calc(100% - 16px); /* Calcul de la largeur pour prendre en compte le padding */
+    padding: 8px; /* Espacement intérieur */
+    border: 1px solid #ffffff; /* Bordure */
+    border-radius: 4px; /* Bordure arrondie */
+    background-color: #f4f9ff; /* Couleur de fond */
+    color: #43344b; /* Couleur du texte */
+    cursor: pointer; /* Curseur pointeur au survol */
+  }
+  
+  
+  /* Style au survol */
+  td select:hover {
+    border-color: #d3c0c0; /* Bordure plus foncée au survol */
+  }
+  
+  /* Style de la bordure lorsque le select est focus */
+  td select:focus {
+    outline: none; /* Retire le contour */
+    border-color: #8d6655; /* Bordure bleue lorsque focus */
+    box-shadow: 0 0 0 0.2rem rgba(85, 2, 74, 0.25); /* Légère ombre bleue */
+  }
+  

@@ -1,0 +1,28 @@
+<h2>Les formations disponible</h2>
+<div class="catalog-layout">
+    <div *ngFor="let training of trainingss" class="training-card">
+      <div>
+        <img [src]="training.imageUrl" alt="Training Image">
+      </div>
+      <h3>{{ training['training'].nom_formation }}</h3>
+      <p>   {{ training['training'].avancement }} le : {{ training['training'].date | date:'dd/MM/yyyy' }}</p>
+      <p>Niveau: {{ training['training'].niveau }}</p>
+      <button class="delete-button"  (click)="togglePopup(training)">S'inscrire</button>
+    </div>
+</div>
+
+<div *ngIf="isPopupVisible" class="popup">
+  <div class="popup-inner">
+        <form [formGroup]="registrationForm" (ngSubmit)="register()">
+            <h2>Register for {{ selectedTraining?.nom_formation }}</h2>
+            <p>Date: {{ selectedTraining?.date | date:'dd/MM/yyyy' }}</p>
+            <p>Niveau: {{ selectedTraining?.niveau }}</p>
+            <label>Username:</label>
+            <input type="text" formControlName="username">
+            <label>Email:</label>
+            <input type="email" formControlName="email">
+            <button type="submit" [disabled]="!registrationForm.valid">Valider</button>
+            <button type="button" (click)="togglePopup()">Cancel</button>
+        </form>
+  </div>
+</div>

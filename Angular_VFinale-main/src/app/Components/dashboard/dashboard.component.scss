@@ -1,0 +1,29 @@
+fieldset {
+  margin-top: 50px;
+  margin-left: 300px; 
+  background-color: #ffffff;
+  border: 2px solid rgb(240, 240, 240); /* Ajoute une bordure solide bleue de 2 pixels */
+}
+.chart-wrapper {
+  display: flex; /* Utilisation de flexbox pour aligner les éléments sur la même ligne */
+  justify-content: space-between; /* Pour espacer les éléments sur la ligne */
+  margin-top: 50px;
+}
+
+.chart-container {
+  width: 400px; /* Largeur des conteneurs de graphique */
+  height: 400px; /* Hauteur des conteneurs de graphique */
+  margin-top: 20px; /* Espacement entre les conteneurs */
+}
+
+
+#barChartContainer {
+  width: 700px; /* Largeur du conteneur de graphique à barres */
+  height: 700px; /* Hauteur du conteneur de graphique à barres */
+  margin-bottom: 20px; /* Espacement entre le graphique à barres et le graphique de type doughnut */
+}
+
+#doughnutChartContainer {
+  width: 400px; /* Largeur du conteneur de graphique de type doughnut */
+  height: 400px; /* Hauteur du conteneur de graphique de type doughnut */
+}

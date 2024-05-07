@@ -1,0 +1,35 @@
+
+<div class="parent">
+    <nav class="navbar">
+      <div class="logo">
+          <img src="../../assets/image/logo.jpg" alt="Logo de l'ATB">
+      </div>
+      <ul class="menu">
+          <li><a href="https://atb.tn/">Accueil   </a></li>
+          <li><a href="https://atb.tn/histoire">À propos  </a></li>
+          <li><a href="https://atb.tn/informations-financieres">Services  </a></li>
+          <li><a href="https://atb.tn/contact">Contact   </a></li>
+      </ul>
+  </nav>
+  <div class="container">
+  <div class="forms-container">
+      <div class="signin-signup">
+          <form (submit)="login($event)"class="sign-in-form" method="post">
+              <h2 class="title">Login</h2>
+              <div class="input-field">
+                  <i class="fas fa-user"></i>
+                  <input type="text" name="username" [(ngModel)]="username" placeholder="Username" required="">
+              </div>
+              <div class="input-field">
+                  <i class="fas fa-lock"></i>
+                  <input type="password" name="Password" [(ngModel)]="password" placeholder="Password" required="">
+              </div>
+             
+              <button  type="submit" class="btn solid" >Se Connecter</button>
+            
+          </form>
+      </div>
+      <img src="../../assets/image/atb_banque.jpg" alt="ATB Banque Logo">
+  </div>
+</div>
+

@@ -1,0 +1,28 @@
+fieldset{
+    margin-top: 60px;
+    margin-left: 450px;
+    background-color: #ffffff;
+    border: 2px solid rgb(255, 255, 255); /* Ajoute une bordure solide bleue de 2 pixels */
+}
+
+/* home.component.css */
+.welcome-message {
+    text-align: center; /* Centrer le contenu horizontalement */
+    margin-top: 50px; /* Marge supérieure pour l'espacement */
+}
+  
+  .welcome-message h1 {
+    font-size: 24px; /* Taille de police pour le titre */
+    color: #333; /* Couleur du texte */
+  }
+  
+  .welcome-message p {
+    font-size: 16px; /* Taille de police pour le paragraphe */
+    color: #666; /* Couleur du texte */
+    margin-top: 20px; /* Marge supérieure pour l'espacement */
+  }
+  
+  .welcome-message img {
+    display: block; /* Permet de centrer l'image horizontalement */
+    margin: 0 auto; /* Auto-marge horizontale pour centrer l'image */
+  }

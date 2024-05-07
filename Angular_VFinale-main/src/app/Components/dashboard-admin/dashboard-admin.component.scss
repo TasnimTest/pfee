@@ -1,0 +1,24 @@
+.chart-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 40px 20px 20px 40px; /* Ajouter de l'espace en haut et à gauche */
+  align-items: flex-start; /* Assurez-vous que les éléments sont alignés en haut */
+}
+
+#pieChartContainer, #doughnutChartContainer {
+  flex: 1 1 25%; /* Prendre la moitié de la ligne sur les tailles de bureau */
+  max-width: 25%; /* Largeur maximale de 50% */
+  background-color: white;
+  padding: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  margin-bottom: 20px;
+  min-height: 300px; /* Hauteur minimale pour la visibilité */
+  border: 1px solid rgb(100, 59, 59); /* Bordure temporaire pour vérifier le conteneur */
+}
+
+canvas {
+  width: 100%; /* Assurez-vous que le canevas remplit la largeur du conteneur */
+  height: 100%; /* Remplissez la hauteur du conteneur pour maintenir le rapport hauteur/largeur */
+}
